@@ -9,16 +9,16 @@ describe('Users', () => {
     users = new Users();
     users.users = [{
       id: '1',
-      name: 'Mike',
-      room: 'Node Course'
+      name: 'Uzair',
+      room: 'Node'
     }, {
       id: '2',
-      name: 'Jen',
-      room: 'React Course'
+      name: 'Django app',
+      room: 'Python Django'
     }, {
       id: '3',
-      name: 'Julie',
-      room: 'Node Course'
+      name: 'Some Name',
+      room: 'Node Chat App'
     }];
   });
 
@@ -26,8 +26,8 @@ describe('Users', () => {
     var users = new Users();
     var user = {
       id: '123',
-      name: 'Andrew',
-      room: 'The Office Fans'
+      name: 'Uzair',
+      room: 'Node App'
     };
     var resUser = users.addUser(user.id, user.name, user.room);
 
@@ -64,14 +64,14 @@ describe('Users', () => {
     expect(user).toNotExist();
   });
 
-  it('should return names for node course', () => {
-    var userList = users.getUserList('Node Course');
+  it('should return names for node app', () => {
+    var userList = users.getUserList('Node');
 
-    expect(userList).toEqual(['Mike', 'Julie']);
+    expect(userList).toEqual(['Uzair', 'Kiet']);
   });
 
-  it('should return names for react course', () => {
-    var userList = users.getUserList('React Course');
+  it('should return names ', () => {
+    var userList = users.getUserList('Django');
 
     expect(userList).toEqual(['Jen']);
   });
